@@ -1,31 +1,4 @@
 #!/usr/bin/env python3
-"""
-generate_m3u.py — DASH playlist generator (config-driven, anonymized)
-=====================================================================
-
-Generates an M3U playlist of MPEG-DASH streams (MPD) with #KODIPROP
-directives, compatible with Kodi 21+ (inputstream.adaptive) and
-OTT Navigator.
-
-Configuration is loaded from one of (in order):
-  1. CONFIG_JSON env var (string containing JSON) — used by GitHub Actions
-  2. config.json file next to this script — used for local runs
-  3. config.example.json (fallback template, may not contain real values)
-
-The config contains: backend URL, sections to fetch, default Origin/Referer,
-resolver prefix, output filenames, etc. No provider names are hardcoded
-in this script — everything comes from the config.
-
-Future-proof features:
-  1. Backend auto-discovery: reads disclaimer JSON to find current backend,
-     tests each candidate, picks the first that responds 200.
-  2. Sections auto-discovery: walks root sections, follows externallink
-     references to discover sub-sections.
-  3. Origin/Referer fallback: uses default from config, but per-item
-     overrides are honored if present in the JSON.
-
-No external dependencies — stdlib only (urllib, json, base64).
-"""
 
 import base64
 import json
