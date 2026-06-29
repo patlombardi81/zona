@@ -1,13 +1,3 @@
-# GitHub Action: refresh DASH playlist every 6 hours
-#
-# Reads config from the CONFIG_JSON repository secret, generates the
-# playlist with fresh tokens, and commits the result.
-#
-# Setup:
-#   1. Copy config.example.json content
-#   2. Replace values with your real provider details
-#   3. In GitHub repo: Settings → Secrets and variables → Actions →
-#      New repository secret → Name: CONFIG_JSON → paste your config
 
 name: Refresh Playlist
 
